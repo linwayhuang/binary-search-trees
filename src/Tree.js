@@ -7,8 +7,10 @@ export class Tree {
 
     buildTree(array) {
 
-        // Remove duplicates and sort
-        const uniqueSortedArray = [new Set(array)].sort((a, b) => a - b);
+        // Remove duplicates (by using Set) and sort
+        // Make sure you always use spread to see the contents of a Set
+        // Otherwise, it will log as [object Set] when you try to print it.
+        const uniqueSortedArray = [...new Set(array)].sort((a, b) => a - b);
 
         // Helper recursive function
         const buildRecursive = (arr) => {
